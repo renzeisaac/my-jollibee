@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+  body{
+    background: red;
+    color: black;
+  }
+  h1{
+    text-align: center ;
+  }
+  .kaon{
+    text-align: center;
+    color: white;
+  }
+  input{
+    height: 50px;
+    border: 2px solid black;
+  }
+  .pila{
+    justify-content: center;
+    display: flex;
+  }
+  button{
+    background: lightgray;
+    width: 100px;
+    cursor: pointer;
+  }
+  button:hover{
+    background: gray;
+    
+  }
+  
+  
+</style>
+<body>
+  <h1>JOLLIBEE</h1>
+  <div class="kaon">
+  <label for="coffee">CHICKEN JOY: 100$</label> <br>
+  <input type="number" id="quan1"> <br> <br> <br>
+  <label for="tea">JOLLY SPAGHETTI: 100$</label> <br>
+  <input type="number" id="quan2"> <br> <br> <br>
+  </div>
+  
+  <div class="pila">
+      <button onclick="pilaTanan()"><h3>ORDER</h3></button>
+  </div>
+    
+    <br><br>
+  
+  <h1>
+  <p id="output">0$</p>
+  </h1>
+  
+  <script>
+        function pilaTanan(){
+          let coffee = 100;
+          let quan1 = Number(document.getElementById("quan1").value);
+          
+          let tea = 100;
+          let quan2 = Number(document.getElementById("quan2").value);
+          
+          let totalsakape = coffee * quan1;
+          let totalsatea = tea * quan2;
+          
+          let totaltanan = totalsakape + totalsatea;
+          
+          let discount = totaltanan * 0.10;
+          let newtotal = totaltanan - discount;
+          
+          if(totaltanan > 499){
+            document.getElementById("output").innerHTML = "COFFEE: " + totalsakape + "<br>" + "MILK TEA: " + totalsatea + "<br>" + "<hr>" + "<br>"+ "TOTAL: " + totaltanan + "<br>"+ "<hr>"+ "<br>" + "DISCOUNT 10%: " + discount + "<br>" + "NEW TOTAL: " + newtotal;
+          }
+          
+          else{
+          document.getElementById("output").innerHTML = "COFFEE: " + totalsakape + "<br>" + "MILK TEA: " + totalsatea + "<br>" + "<hr>" + "<br>"+ "TOTAL: " + totaltanan;
+          }
+          
+        }
+    
+  </script>
+</body>
+
+</html>
